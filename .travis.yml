@@ -15,10 +15,17 @@ python:
   - "3.6"
   - "3.7"
   - "2.5"
+  
+env:
+  - DJANGO_VERSION=2.1.13
+  - DJANGO_VERSION=2.2.6
+  
 install:
   - pip install -r requirements.txt
   - pip install codacy-coverage
   - pip install flake8 
+  - pip install -q Django==$DJANGO_VERSION
+  - python setup.py -q install
   
 notifications:
   email:
