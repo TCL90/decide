@@ -13,10 +13,12 @@ before_script:
 language: python
 python:
   - "3.6"
+  - "3.7"
+  - "2.5"
 install:
   - pip install -r requirements.txt
   - pip install codacy-coverage
-  - pip install 
+  - pip install flake8 
   
 notifications:
   email:
