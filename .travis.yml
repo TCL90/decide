@@ -16,8 +16,15 @@ python:
 install:
   - pip install -r requirements.txt
   - pip install codacy-coverage
-  - pip install flake8
- 
+  - pip install 
+  
+notifications:
+  email:
+    recipients:
+      - tomcablop@alum.us.es
+    on_success: always
+    on_failure: always
+    
 script:
   - cd decide
   - coverage run --branch --source=. ./manage.py test --keepdb --with-xunit
