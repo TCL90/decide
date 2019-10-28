@@ -8,6 +8,8 @@ before_script:
   - psql -U postgres -c "create user decide password 'decide'"
   - psql -U postgres -c "create database test_decide owner decide"
   - psql -U postgres -c "ALTER USER decide CREATEDB"
+  - cp decide/local_settings.travis.py decide/local_settings.py
+  
 language: python
 python:
   - "3.6"
@@ -15,11 +17,6 @@ install:
   - pip install -r requirements.txt
   - pip install codacy-coverage
   - pip install flake8
-  
-before_script:
- - cd decide
- - cp local_settings.travis.py local_settings.py
- - cd ..
  
 script:
   - cd decide
